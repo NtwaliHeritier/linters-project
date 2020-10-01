@@ -14,9 +14,8 @@ puts "Welcome to the linter"
     end
  end
 
- file=File.open(file_path)
+ file=File.open(file_path, "r")
  test=Test.new(file)
- test.test_file()
- puts test.linter_errors
+ puts test.test_file()
  file.close()
 

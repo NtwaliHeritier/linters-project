@@ -1,3 +1,7 @@
-a="Hey "
-b= a.split("")
-puts b[-1]==' '
+arr = []
+
+def pushing(x)
+    arr.push(x)
+end
+
+puts arr.push(2)

@@ -9,6 +9,10 @@ class Test
     end
 
     def test_file
-        check(@file_content, @linter_errors)
+        check_trailing(@file_content, @linter_errors)
+    end
+
+    def display
+        "hello"
     end
 end
