@@ -56,4 +56,16 @@ class Test
     end
     @line_no=1
   end
+
+  def check_empty_line(file_line)
+    file_line=file_line.split("\n")
+    i=0
+    while i<file_line.size do
+      if file_line[i-1].match?(/[a-zA-Z0-9]/)&&(file_line[i].include?("if") || file_line[i].include?("for") || file_line[i].include?("function"))
+      @linter_errors.push("Add an empty line before line #{@line_no}")
+      end
+      i+=1
+      @line_no+=1
+    end
+  end
 end
