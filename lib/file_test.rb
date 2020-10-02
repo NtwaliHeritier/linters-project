@@ -42,6 +42,7 @@ class Test
       @opening_paranthesis+=1 if i.split("").include?("{")
       @closing_paranthesis+=1 if i.split("").include?("}")
     end
+    @opening_paranthesis<=>@closing_paranthesis
   end
 
   def check_empty_space(file_line)
@@ -67,5 +68,6 @@ class Test
       i+=1
       @line_no+=1
     end
+    @line_no=1
   end
 end
