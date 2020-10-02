@@ -19,13 +19,11 @@ end
 test = Test.new
 file_content = test.file_content
 linter_array = test.linter_errors
-file = File.open(file_path, 'r')
-for file_line in file do
-  test.check_trailing(file_line, linter_array)
-  test.check_semi_colon(file_line, linter_array)
-  test.check_paranthesis(file_line)
-end
-file.close
+file = File.read(file_path)
+test.check_trailing(file)
+test.check_semi_colon(file)
+test.check_empty_space(file)
+test.check_paranthesis(file)
 case test.opening_paranthesis<=>test.closing_paranthesis
  when 1
     test.linter_errors.push("Missing a closing }")

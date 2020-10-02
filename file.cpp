@@ -6,8 +6,9 @@ main() {
     cout<<"Enter value 2" ;
     cin>>b;
     quotient = a / b;
+    
     if b!=0{
     cout quotient;
     }
-}
+    cout<<"Bye"
 }
