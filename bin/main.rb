@@ -14,8 +14,16 @@ puts "Welcome to the linter"
     end
  end
 
+ test=Test.new
+ file_content=test.file_content
+ linter_array=test.linter_errors
  file=File.open(file_path, "r")
- test=Test.new(file)
- puts test.test_file()
+    for file_line in file
+    file_content=file_line
+    test.check_trailing(file_content, linter_array)
+    test.check_semi_colon(file_content, linter_array)
+ end
  file.close()
+
+ puts test.linter_errors
 
