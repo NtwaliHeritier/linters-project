@@ -3,7 +3,7 @@
 
 class Test
   KEYS = %w[function if for while].freeze
-  attr_accessor :linter_errors, :opening_paranthesis, :closing_paranthesis
+  attr_reader :linter_errors
   def initialize
     @linter_errors = []
     @line_no = 1
