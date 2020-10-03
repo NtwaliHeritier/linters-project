@@ -110,7 +110,6 @@ To get a local copy of the repository please run the following commands on your 
     3. Enter the path to the directory where the project is located
     4. press Enter
 
-
 ## Test
     1. Open a terminal
     2. Run 'gem install rspec'
