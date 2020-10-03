@@ -102,22 +102,22 @@ cout<<a;
 
 To get a local copy of the repository please run the following commands on your terminal:
 
-    $ git clone https://github.com/NtwaliHeritier/linters-project
+    1. git clone https://github.com/NtwaliHeritier/linters-project
+    2. cd linters-project
 
-    $ cd linters-project
+## Run the linter project
+    1. cd bin
+    2. run ruby main.rb
+    3. Enter the path to the directory where the project is located
+    4. press Enter
+
 
 ## Test
-
-1. Open a terminal
-2. Run 'gem install rspec'
-3. Run 'cd linters-project'
-4. Run rspec --init’ to install rspec in directory
-
-## Run
-
-1. Run 'rspec' in the terminal
-2. In the terminal, you should see if the tests pass or fail.
-![screenshot](./assets/rspec.PNG)
+    1. Open a terminal
+    2. Run 'gem install rspec'
+    3. Run 'cd linters-project'
+    4. Run rspec --init to install rspec in directory
+    5. Run 'rspec' in the terminal
 
 ## Authors
 👤  **Ntwali Heritier**
