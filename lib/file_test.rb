@@ -2,9 +2,8 @@
 
 class Test
   @@key=%w[function if for while]
-  attr_accessor :file_content, :linter_errors, :opening_paranthesis, :closing_paranthesis
+  attr_accessor :linter_errors, :opening_paranthesis, :closing_paranthesis
   def initialize
-    @file_content = ''
     @linter_errors = []
     @line_no = 1
     @opening_paranthesis=0
@@ -71,6 +70,22 @@ class Test
       end
       i+=1
       @line_no+=1
+    end
+    @line_no=1
+    @linter_errors
+  end
+
+  def check_below_line(file_line)
+    file_line=file_line.split("\n")
+    i=0
+    while i<file_line.size
+      if file_line[i].include?("}")
+        if !file_line[i+1].nil? && file_line[i+1].match?(/[a-zA-Z0-9]/) && !file_line[i+1].include?("}")
+          @linter_errors.push("Add an empty space below line #{@line_no}")
+        end
+      end
+      @line_no+=1
+      i+=1
     end
     @line_no=1
     @linter_errors

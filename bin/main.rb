@@ -24,6 +24,7 @@ test.check_semi_colon(file)
 test.check_empty_space(file)
 test.check_empty_line(file)
 test.check_indentation(file)
+test.check_below_line(file)
 case test.check_paranthesis(file)
  when 1
     test.linter_errors.push("Missing a closing }")
