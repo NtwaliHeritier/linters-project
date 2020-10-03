@@ -1,5 +1,6 @@
-# rubocop: disable Metrics/MethodLength, Metrics/AbcSize, Style/Documentation, Metrics/ClassLength
 # frozen_string_literal: true
+
+# rubocop: disable Metrics/MethodLength, Metrics/AbcSize, Style/Documentation, Metrics/ClassLength
 
 class Test
   KEYS = %w[function if for while].freeze

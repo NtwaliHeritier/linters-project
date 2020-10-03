@@ -1,5 +1,6 @@
-# rubocop: disable Metrics/BlockLength
 # frozen_string_literal: true
+
+# rubocop: disable Metrics/BlockLength
 
 require_relative '../lib/file_test.rb'
 
