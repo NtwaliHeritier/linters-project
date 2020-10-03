@@ -101,7 +101,6 @@ cout<<a;
 ## Getting Started
 
 To get a local copy of the repository please run the following commands on your terminal:
-
     1. git clone https://github.com/NtwaliHeritier/linters-project
     2. cd linters-project
 
@@ -114,10 +113,9 @@ To get a local copy of the repository please run the following commands on your 
 
 ## Test
     1. Open a terminal
-    2. Run 'gem install rspec'
-    3. Run 'cd linters-project'
-    4. Run rspec --init to install rspec in directory
-    5. Run 'rspec' in the terminal
+    2. Run 'bundle install'
+    3. Run rspec --init
+    3. Run rspec
 
 ## Authors
 👤  **Ntwali Heritier**
