@@ -115,7 +115,7 @@ To get a local copy of the repository please run the following commands on your 
     1. Open a terminal
     2. Run 'gem install rspec'
     3. Run rspec --init
-    3. Run rspec
+    3. Run rspec in the terminal
 
 ## Authors
 👤  **Ntwali Heritier**
