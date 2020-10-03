@@ -19,7 +19,17 @@ Listed below are the methods built in this project:
 ## C++ linter cases
 
 `Good code`
-![screenshot](./assets/lines.PNG)
+
+```bash
+cout<<"Hello"
+
+if(a>1) {
+    cout<<a;
+}
+
+cout<<"Bye"
+
+```
 
 `Bad code`
 ![screenshot](./assets/semi.PNG)

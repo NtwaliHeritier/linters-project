@@ -1,7 +1,8 @@
+# rubocop: disable Metrics/MethodLength, Metrics/AbcSize, Style/Documentation, Metrics/ClassLength
 # frozen_string_literal: true
 
 class Test
-  @@key = %w[function if for while]
+  KEYS = %w[function if for while].freeze
   attr_accessor :linter_errors, :opening_paranthesis, :closing_paranthesis
   def initialize
     @linter_errors = []
@@ -12,12 +13,10 @@ class Test
 
   def check_trailing(file_line)
     file_line = file_line.split("\n")
-
     file_line.each do |i|
       @linter_errors.push("There is a trailing space at line #{@line_no}") if i.split('')[-1] == ' ' && i.match?(/\w/)
       @line_no += 1
     end
-
     @line_no = 1
     @linter_errors
   end
@@ -63,7 +62,7 @@ class Test
     file_line = file_line.split("\n")
     i = 0
     while i < file_line.size
-      @@key.each do |key|
+      KEYS.each do |key|
         if file_line[i].include?(key) && file_line[i - 1].match?(/[a-zA-Z0-9]/)
           @linter_errors.push("Add an empty line before line #{@line_no}")
         end
@@ -75,27 +74,11 @@ class Test
     @linter_errors
   end
 
-  def check_below_line(file_line)
-    file_line = file_line.split("\n")
-    i = 0
-    while i < file_line.size
-      if file_line[i].include?('}')
-        if !file_line[i + 1].nil? && file_line[i + 1].match?(/[a-zA-Z0-9]/) && !file_line[i + 1].include?('}')
-          @linter_errors.push("Add an empty space below line #{@line_no}")
-        end
-      end
-      @line_no += 1
-      i += 1
-    end
-    @line_no = 1
-    @linter_errors
-  end
-
   def check_indentation(file_line)
     file_line = file_line.split("\n")
     i = 0
     while i < file_line.size
-      @@key.each do |key|
+      KEYS.each do |key|
         next unless file_line[i].include?(key)
 
         file_word = file_line[i].split('')
@@ -117,8 +100,6 @@ class Test
     @linter_errors
   end
 
-  private
-
   def count(array)
     increment = 0
     array.each do |i|
@@ -126,4 +107,22 @@ class Test
     end
     increment
   end
+
+  def check_below_line(file_line)
+    file_line = file_line.split("\n")
+    i = 0
+    while i < file_line.size
+      if file_line[i].include?('}')
+        if !file_line[i + 1].nil? && file_line[i + 1].match?(/[a-zA-Z0-9]/) && !file_line[i + 1].include?('}')
+          @linter_errors.push("Add an empty space below line #{@line_no}")
+        end
+      end
+      @line_no += 1
+      i += 1
+    end
+    @line_no = 1
+    @linter_errors
+  end
 end
+
+# rubocop: enable Metrics/MethodLength, Metrics/AbcSize, Style/Documentation, Metrics/ClassLength

@@ -1,3 +1,4 @@
+# rubocop: disable Metrics/BlockLength
 # frozen_string_literal: true
 
 require_relative '../lib/file_test.rb'
@@ -71,3 +72,5 @@ describe Test do
     end
   end
 end
+
+# rubocop: enable Metrics/BlockLength

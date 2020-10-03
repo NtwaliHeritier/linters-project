@@ -17,7 +17,6 @@ loop do
 end
 
 test = Test.new
-linter_array = test.linter_errors
 file = File.read(file_path)
 test.check_trailing(file)
 test.check_semi_colon(file)
