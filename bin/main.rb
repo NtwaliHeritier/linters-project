@@ -17,13 +17,13 @@ loop do
 end
 
 test = Test.new
-file_content = test.file_content
 linter_array = test.linter_errors
 file = File.read(file_path)
 test.check_trailing(file)
 test.check_semi_colon(file)
 test.check_empty_space(file)
 test.check_empty_line(file)
+test.check_indentation(file)
 case test.check_paranthesis(file)
  when 1
     test.linter_errors.push("Missing a closing }")

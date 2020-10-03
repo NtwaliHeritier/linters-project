@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Test
+  @@key=%w[function if for while]
   attr_accessor :file_content, :linter_errors, :opening_paranthesis, :closing_paranthesis
   def initialize
     @file_content = ''
@@ -56,18 +57,57 @@ class Test
       @line_no+=1
     end
     @line_no=1
+    @linter_errors
   end
 
   def check_empty_line(file_line)
     file_line=file_line.split("\n")
     i=0
     while i<file_line.size do
-      if file_line[i-1].match?(/[a-zA-Z0-9]/)&&(file_line[i].include?("if") || file_line[i].include?("for") || file_line[i].include?("function"))
+       for key in @@key
+         if file_line[i].include?(key) && file_line[i-1].match?(/[a-zA-Z0-9]/)
       @linter_errors.push("Add an empty line before line #{@line_no}")
+         end
       end
       i+=1
       @line_no+=1
     end
     @line_no=1
+    @linter_errors
+  end
+
+  def check_indentation(file_line)
+    file_line=file_line.split("\n")
+    i=0
+    while i<file_line.size
+      for key in @@key
+        if file_line[i].include?(key)
+          file_word=file_line[i].split("")
+          j=i
+          temporary=@line_no
+          loop do
+            j+=1
+            temporary+=1
+            break if file_line[j].include?("}")
+            k=file_line[j].split("")
+            unless count(file_word) < count(k)
+              @linter_errors.push("Fix indentation at line #{temporary}")
+            end
+          end
+        end
+      end
+      i+=1
+      @line_no+=1
+    end
+    @line_no=1
+    @linter_errors
+  end
+
+  private def count(array)
+    increment=0
+    for i in array
+      increment+=1 if i.match?(/\s/)
+    end
+    increment
   end
 end
