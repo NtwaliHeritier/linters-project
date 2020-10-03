@@ -21,6 +21,19 @@ Listed below are the methods built in this project:
 `Good code`
 
 ```bash
+cout<<"Hello";
+
+if(a>1) {
+    cout<<a;
+}
+
+cout<<"Bye";
+
+```
+
+`Bad code`
+
+```bash
 cout<<"Hello"
 
 if(a>1) {
@@ -31,33 +44,59 @@ cout<<"Bye"
 
 ```
 
+`Good code`
+
+```bash
+
+if(a>1) {
+    cout<<a;
+}
+
+```
+
 `Bad code`
-![screenshot](./assets/semi.PNG)
+
+```bash
+
+if(a>1) {
+    cout<<a;
+}
+
+```
 
 `Good code`
-![screenshot](./assets/good space.PNG)
+
+```bash
+cout<<"Hello";
+
+if(a>1) {
+    cout<<a;
+}
+
+cout<<"Bye";
+```
 
 `Bad code`
-![screenshot](./assets/bad trailing.PNG)
+
+```bash
+cout<<"Hello";
+if(a>1) {
+    cout<<a;
+}
+cout<<"Bye";
+```
 
 `Good code`
-![screenshot](./assets/lines.PNG)
-
+```bash
+if(a>1) {
+    cout<<a;
+}
+```
 `Bad code`
-![screenshot](./assets/no lines.PNG)
-
-`Good code`
-![screenshot](./assets/good space.PNG)
-
-`Bad code`
-![screenshot](./assets/bad space.PNG)
-
-`Good code`
-![screenshot](./assets/good space.PNG)
-
-`Bad code`
-![screenshot](./assets/bad indent.PNG)
-
+if(a>1) {
+cout<<a;
+}
+```
 
 ## Getting Started
 
