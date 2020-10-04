@@ -23,7 +23,6 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  bundler (~> 2.1.4)
   rubocop (~> 0.81.0)
 
 BUNDLED WITH
