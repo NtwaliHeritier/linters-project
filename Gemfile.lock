@@ -2,7 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.1)
-    bundler (2.1.4)
     jaro_winkler (1.5.4)
     parallel (1.19.2)
     parser (2.7.1.5)
@@ -24,6 +23,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bundler (~> 2.1.4)
   rubocop (~> 0.81.0)
 
 BUNDLED WITH
