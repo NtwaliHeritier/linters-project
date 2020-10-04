@@ -6,7 +6,7 @@ describe Test do
   let(:cout_line) { 'cin >> a' }
   let(:indent_line) { " if(a>2)\ncout<<arr\n}" }
   let(:empty_line) { "cout<<a; \n if(a==2) {" }
-  let(:line_below) { "}\n cout<<b;" }
+  let(:line_below) { "}\n cout<<b" }
 
   describe '#check_trailing' do
     it 'returns array with error' do
