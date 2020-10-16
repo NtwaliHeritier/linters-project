@@ -121,7 +121,7 @@ To get a local copy of the repository please run the following commands on your 
 
 - Github: [@NtwaliHeritier](https://github.com/NtwaliHeritier)
 - Twitter: [@NtwaliHeritier](https://twitter.com/NtwaliHeritier)
-- Linkedin: [Ntwali Heritier](https://linkedin.com/in/ntwali-heritier-9950001a2)
+- Linkedin: [Ntwali Heritier](https://www.linkedin.com/in/ntwaliheritier/)
 
 ## 🤝 Contributing
 
